@@ -1,1 +1,2 @@
-FILMS = "films"
+FUNCTIONS = "functions"
+CALULATOR = "calculator"

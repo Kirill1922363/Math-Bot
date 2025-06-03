@@ -1,35 +1,46 @@
-from aiogram import F, Router
+from aiogram import Router, F
 from aiogram.filters import Command
-from aiogram.types import CallbackQuery, Message, URLInputFile
+from aiogram.types import Message, ReplyKeyboardRemove
+from aiogram.fsm.context import FSMContext
 
-from app.commands import FILMS
-from app.database import get_all_films, get_film
-from app.keyboards import BUTTON_LIST_FILM, FilmCallback, films_keyboard_markup
-from settings import DATABASE
+from app.keyboards import BUTTON_CALCULATE, math_menu_keyboard
+from app.math_logic import MathForm, calculate_expression
 
 router = Router()
 
-
-@router.message(Command(FILMS))
-@router.message(F.text == BUTTON_LIST_FILM)
-async def films(message: Message) -> None:
-    films = get_all_films(DATABASE)
-    markup = films_keyboard_markup(films)
-
-    await message.answer(f"All films: ", reply_markup=markup)
-
-
-@router.callback_query(FilmCallback.filter())
-async def callb_film(callback: CallbackQuery, callback_data: FilmCallback) -> None:
-    print(callback_data)
-    film_id = callback_data.id
-    film_data = get_film(DATABASE, film_id)
-
-    text_message = f"Фільм: {film_data['title']}\nОпис: {film_data['desc']}\nРік {film_data['year']}\n"
-    poster = film_data["photo"]
-    await callback.message.answer_photo(
-        caption=f"{text_message}",
-        photo=URLInputFile(poster),
-        filename=f"{film_data["title"]}_poster",
+@router.message(Command("help"))
+async def help_handler(message: Message):
+    help_text = (
+        "Доступні операції:\n"
+        "+ додавання\n- віднімання\n* множення\n/ ділення\n^ степінь\n\n"
+        "Функції:sin(), cos(), tan()\n"
     )
-    await callback.answer()
+    await message.answer(help_text, reply_markup=math_menu_keyboard())
+
+@router.message(F.text == BUTTON_CALCULATE)
+async def start_calculation(message: Message, state: FSMContext):
+    await state.set_state(MathForm.expression)
+    await message.answer(
+        reply_markup=ReplyKeyboardRemove()
+    )
+
+@router.message(Command("calculator"))
+async def command_calculator_handler(message: Message):
+    await message.answer(
+        "Режим калькулятора. Введіть вираз:",
+        reply_markup=math_menu_keyboard()
+    )
+
+@router.message(MathForm.expression)
+async def evaluate(message: Message, state: FSMContext):
+    result = calculate_expression(message.text)
+    await state.clear()
+    await message.answer(result, reply_markup=math_menu_keyboard())
+
+@router.message(F.text & ~F.text.startswith('/'))  
+async def handle_all_text_messages(message: Message):
+    if any(char in message.text for char in '+-*/^()'):  
+        result = calculate_expression(message.text)
+        await message.answer(result, reply_markup=math_menu_keyboard())
+    else:
+        await message.answer("Введіть математичний вираз або виберіть команду /help")
