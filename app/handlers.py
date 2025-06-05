@@ -3,8 +3,8 @@ from aiogram.filters import Command
 from aiogram.types import Message, ReplyKeyboardRemove
 from aiogram.fsm.context import FSMContext
 
-from app.keyboards import BUTTON_CALCULATE, math_menu_keyboard
-from app.math_logic import MathForm, calculate_expression
+from .keyboards import BUTTON_CALCULATE, math_menu_keyboard
+from .math_logic import MathForm, calculate_expression
 
 router = Router()
 
