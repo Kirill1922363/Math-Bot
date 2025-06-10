@@ -3,11 +3,14 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 from aiogram.filters.callback_data import CallbackData
 from aiogram.types.inline_keyboard_button import InlineKeyboardButton
 BUTTON_CALCULATE = " Обчислити вираз"
-
+GEOMETRIC_CALCULATOR = " Геометричний калькулятор"
+STOP = "Стоп"
 def math_menu_keyboard():
     builder = ReplyKeyboardBuilder()
+    builder.button(text=GEOMETRIC_CALCULATOR)
     builder.button(text=BUTTON_CALCULATE)
-    builder.adjust(1)
+    builder.button(text=STOP)
+    builder.adjust(2, 1) 
     return builder.as_markup(resize_keyboard=True)
 
 def menu_keyboards():
