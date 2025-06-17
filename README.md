@@ -1,4 +1,4 @@
-# Geometry Calculator Bot 🤖📐
+#Math Bot🤖📐
 
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue?logo=python)](https://python.org)
 [![Aiogram 3](https://img.shields.io/badge/Aiogram-3.x-blue?logo=telegram)](https://docs.aiogram.dev/)
