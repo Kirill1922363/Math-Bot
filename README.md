@@ -1,4 +1,4 @@
-https://www.canva.com/design/DAGqm34uemU/TZPa4bAwgTkHG82XJ9d7Zg/edit?ui=eyJBIjp7fX0
+![1.png](https://www.canva.com/design/DAGqm34uemU/TZPa4bAwgTkHG82XJ9d7Zg/edit?ui=eyJBIjp7fX0) 
 I made a Telegram bot that helps in learning algebra and geometry. It is designed to quickly calculate examples, check results and support the user during learning.
 Algebra:
 Simple arithmetic operations
