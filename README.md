@@ -1,3 +1,8 @@
+![Uploading 1.png…]()
+![Uploading 1.png…]()
+![Uploading 1.png…]()
+![Uploading 1.png…]()
+
 I made a Telegram bot that helps in learning algebra and geometry. It is designed to quickly calculate examples, check results and support the user during learning.
 Algebra:
 Simple arithmetic operations
