@@ -22,7 +22,6 @@ An intelligent Telegram bot for mathematical computations and geometric calculat
 
 ### 💎 UX Features
 - Interactive buttons
-- Calculation history
 - Real-time hints
 - Error-tolerant input
 
