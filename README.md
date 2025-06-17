@@ -37,7 +37,7 @@ cd geometry-bot
 pip install -r requirements.txt
 
 # Configure environment
-cp .env.example .env  # Add your Telegram bot token
+.env.example .env  # Add your Telegram bot token
 
 # Run bot
 python -m bot
