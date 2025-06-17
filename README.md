@@ -11,7 +11,6 @@ An intelligent Telegram bot for mathematical computations and geometric calculat
 
 ### 🧮 Mathematics
 - Basic operations: `+`, `-`, `*`, `/`, `^` 
-- Parentheses and priority support
 - Trigonometric functions (`sin`, `cos`, `tan`)
 
 ### 📐 Geometry
