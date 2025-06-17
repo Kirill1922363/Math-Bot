@@ -19,7 +19,7 @@ An intelligent Telegram bot for mathematical computations and geometric calculat
 |---------------|----------------------------|
 | Circle        | Area, Circumference        |
 | Rectangle     | Area, Perimeter            |
-| Triangle      | Area (base × height)       |
+| Triangle      | Area                       |
 
 ### 💎 UX Features
 - Interactive buttons
