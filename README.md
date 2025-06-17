@@ -2,8 +2,6 @@
 
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue?logo=python)](https://python.org)
 [![Aiogram 3](https://img.shields.io/badge/Aiogram-3.x-blue?logo=telegram)](https://docs.aiogram.dev/)
-[![MIT License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 An intelligent Telegram bot for mathematical computations and geometric calculations with intuitive interface.
 
