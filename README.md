@@ -1,4 +1,4 @@
-![Math Bot Preview](https://github.com/Kirill1922363/Math-Bot/raw/images/math-bot-preview.png)
+![Math Bot Preview](https://github.com/Kirill1922363/Math-Bot/raw/images/math-bot.png)
 I made a Telegram bot that helps in learning algebra and geometry. It is designed to quickly calculate examples, check results and support the user during learning.
 Algebra:
 Simple arithmetic operations
